@@ -146,7 +146,9 @@ class CarController():
     idx = frame % 4
     can_sends.append(hondacan.create_steering_control(self.packer, apply_steer,
       lkas_active, CS.CP.carFingerprint, idx, CS.CP.openpilotLongitudinalControl))
-
+    # *** car is a 2016 accord.  return can_sends
+    return can_sends
+    
     # Send dashboard UI commands.
     if (frame % 10) == 0:
       idx = (frame//10) % 4
